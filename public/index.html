@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
     <title>Clone and Run Repo</title>
 </head>
-<body>
-    <h1>Clone and Run Git Repository</h1>
-    <form action="clone-and-run" method="post">
-        <label for="repoUrl">Repository URL:</label>
-        <input type="text" id="repoUrl" name="repoUrl" value="" required><br>
+<body class="pa4 avenir">
+    <h1 class="f2 lh-title">Clone and Run Git Repository</h1>
+    <form action="clone-and-run" method="post" class="measure center">
+        <div class="mt3">
+            <label for="repoUrl" class="db fw6 lh-copy f6">Repository URL:</label>
+            <input type="text" id="repoUrl" name="repoUrl" value="" required class="pa2 input-reset ba bg-transparent w-100">
+        </div>
         
-        <label for="startCommand">Start Command:</label>
-        <input type="text" id="startCommand" name="startCommand" placeholder="npm run dev" value=""><br>
+        <div class="mt3">
+            <label for="startCommand" class="db fw6 lh-copy f6">Start Command:</label>
+            <input type="text" id="startCommand" name="startCommand" placeholder="npm run dev" value="" class="pa2 input-reset ba bg-transparent w-100">
+        </div>
+
+        <div class="mt3">
+            <label for="sshKey" class="db fw6 lh-copy f6">SSH Key:</label>
+            <textarea id="sshKey" name="sshKey" class="pa2 input-reset ba bg-transparent w-100" placeholder="Paste your SSH key here"></textarea>
+        </div>
+
+        <div class="mt3">
+            <label for="envFile" class="db fw6 lh-copy f6">.env File Content:</label>
+            <textarea id="envFile" name="envFile" class="pa2 input-reset ba bg-transparent w-100" placeholder="Paste your .env file content here"></textarea>
+        </div>
         
-        <button type="submit">Clone and Run</button>
+        <div class="mt3">
+            <button type="submit" class="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6">Clone and Run</button>
+        </div>
     </form>
 </body>
 </html>
