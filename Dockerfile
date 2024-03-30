@@ -166,21 +166,20 @@ RUN set -eux; \
 
 
 # Install Nginx and Git
-RUN apt-get update && apt-get install -y nginx git
+RUN apt-get update && apt-get install -y nginx git build-essential
 
 RUN python3 -m pip install aider-chat
 
 # Set the working directory in the container
 WORKDIR /usr/src/app
 
-# Copy package.json and package-lock.json before other files
-COPY package*.json ./
+
+COPY . .
+
+RUN rm -rf node_modules
 
 # Install any needed packages specified in package.json
 RUN npm install
-
-# Bundle app source inside Docker image
-COPY . .
 
 # Copy Nginx configuration file
 COPY nginx.conf /etc/nginx/nginx.conf
