@@ -8,7 +8,6 @@ RUN python3 -m pip install aider-chat
 # Set the working directory in the container
 WORKDIR /usr/src/app
 
-
 COPY . .
 
 RUN rm -rf node_modules
