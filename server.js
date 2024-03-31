@@ -7,7 +7,7 @@ const WebSocket = require('ws')
 const bodyParser = require('body-parser')
 
 // const REPO_DIRECTORY = './cloned_repos/app'
-const REPO_DIRECTORY = './'
+const REPO_DIRECTORY = '/usr/src/second-app'
 
 const port = 3000
 // const redirectPort = 3001 // Port 3001 for redirecting to __control initially
