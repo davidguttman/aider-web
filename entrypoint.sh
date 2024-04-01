@@ -60,6 +60,7 @@ if ! service nginx status; then
     tail -f /dev/null
 fi
 
+export REPO_DIRECTORY=/usr/src/second-app
 # Start the original Node.js application in the background
 echo "Starting the original Node.js application..."
 npm start

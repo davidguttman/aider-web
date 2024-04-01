@@ -4,7 +4,7 @@ const express = require('express')
 const WebSocket = require('ws')
 const bodyParser = require('body-parser')
 
-const REPO_DIRECTORY = '/usr/src/second-app'
+const REPO_DIRECTORY = process.env.REPO_DIRECTORY || './'
 
 const port = 3000
 
@@ -51,9 +51,11 @@ function wsConnectionHandler (ws) {
       })
 
       pythonProcess.on('data', function (data) {
+        console.log('python: ', data)
         ws.send(data)
       })
     } else if (message.type === 'input') {
+      console.log('input: ', message.data)
       // Forward input to the node-pty process
       if (pythonProcess) {
         pythonProcess.write(message.data)
